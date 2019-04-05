@@ -41,27 +41,29 @@ public class App {
 		System.out.println("• Liste des Livres :");
 		listeLivres.forEach(unLivre -> {
 			affichage
-			.append(unLivre.getId()).append(" - ").append(unLivre.getTitre()).append(" - ").append(unLivre.getAuteur());
+			.append(unLivre.getId()).append(" - ").append(unLivre.getTitre()).append(" - ").append(unLivre.getAuteur())
+			.append("\n");
 				
 		});
+		System.out.println(affichage+"\n\n");
 		
 		
 		System.out.println("• Liste des emprunts :");
 		emprunts.forEach(unEmprunt -> {
 			affichage2
-			.append("\n\n")
+			//.append("\n\n")
 				.append("> Emprunté du : ").append(unEmprunt.getDateDebut()).append(" - au : ").append(unEmprunt.getDateFin())
 				.append("\n");
 			
 			unEmprunt.getLivre().forEach(unLivre -> {
-				affichage2.append(">> titre=").append(unLivre.getTitre()).append("\n");
+				affichage2.append(">> titre=").append(unLivre.getTitre()).append("\n\n");
 				
 			});
 				
 		});
+		System.out.println(affichage2+"\n\n");
 		
-		
-		System.out.println("• Emprunts pour le client :");
+		System.out.println("• Emprunts par client :");
 		clients.forEach(unClient -> {
 			affichage3
 			.append("\nPrénom : ").append(unClient.getPrenom())
@@ -75,11 +77,7 @@ public class App {
 			
 				
 		});
-		
-	
-		System.out.println(affichage);
-		System.out.println(affichage2);
-		System.out.println(affichage3);
+		System.out.println(affichage3+"\n\n");
 		
 		
 		
